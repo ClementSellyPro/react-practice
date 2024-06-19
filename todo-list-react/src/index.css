@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root{
+  --bg-body: hsl(0, 0%, 98%);
+  --bg-element: hsl(0, 0%, 100%);
+  --text-color: hsl(235, 19%, 35%);
+  --text-color-inactive: hsl(236, 9%, 61%);
+  --text-active: hsl(220, 98%, 61%);
+}
+.dark{
+  --bg-body: hsl(235, 21%, 11%);
+  --bg-element: hsl(209, 23%, 22%);
+  --text-color: hsl(235, 19%, 35%);
+  --text-color-inactive: hsl(236, 9%, 61%);
+  --text-active: hsl(220, 98%, 61%);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,11 +22,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+
+  background-color: var(--bg-body);
+}
+body::after{
+  position: absolute;
+  top: 0px;
+  content: '';
+  width: 100%;
+  height: 350px;
+  background-image: url('./images/bg-desktop-light.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
 
 *{
   margin: 0px;
   padding: 0px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 code {
