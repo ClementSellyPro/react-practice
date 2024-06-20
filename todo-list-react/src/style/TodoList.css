@@ -1,0 +1,28 @@
+.TodoList{
+    width: 100%;
+    background-color: var(--bg-element);
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task{
+    position: relative;
+    display: flex;
+    padding: 20px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color-inactive);
+}
+.task:last-child{
+    border-bottom: none;
+}
+
+.task-text{
+    margin-left: 20px;
+}
+
+.delete-icon{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}

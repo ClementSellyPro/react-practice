@@ -1,0 +1,26 @@
+.InfoElement{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: var(--text-color-inactive);
+}
+.task-filter{
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
+.task-filter p{
+    cursor: pointer;
+    font-weight: 700;
+}
+.task-filter .selected, .task-filter .selected:hover{
+    color: var(--text-active);
+}
+
+.clear-completed{
+    cursor: pointer;
+}
+
+.task-filter p:hover, .clear-completed:hover{
+    color: var(--text-color);
+}

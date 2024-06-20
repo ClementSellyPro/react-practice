@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import '../style/InputComponent.css';
 import checkedIcon from '../images/icon-check.svg';
+import taskContext from '../context/task.context';
 
 function InputComponent(){
 
-    const [checked, setChecked] = useState(false);
+    // const [checked, setChecked] = useState(false);
+    const {checked, handleCheckClick} = useContext(taskContext)
 
-    function handleCheckClick(){
-        setChecked(!checked);
-    }
+    // function handleCheckClick(){
+    //     setChecked(!checked);
+    // }
 
     return (
         <div className='InputComponent'>
