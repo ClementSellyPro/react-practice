@@ -3,18 +3,17 @@ import { useContext } from 'react';
 import taskContext from '../context/task.context';
 import checkedIcon from '../images/icon-check.svg';
 
-function Checkbox({clicked}){
-    const {checked} = useContext(taskContext);
-    const {setIdElement} = useContext(taskContext);
+function Checkbox(){
 
-    function getElement(e){
-        let idElement = e.target.parentElement.dataset.id;
-        setIdElement(idElement);
+    const {checked} = useContext(taskContext);
+
+    function handleClick(e){
+        console.log(e);
     }
 
     return (
-        <div onClick={getElement} className={checked && clicked ? 'checkbox checked' : 'checkbox'}> 
-            {checked && clicked ? <img src={checkedIcon} alt='Checked Icon' /> : null}
+        <div onClick={handleClick} className={checked ? 'checkbox checked' : 'checkbox'}> 
+            {checked ? <img src={checkedIcon} alt='Checked Icon' /> : null}
         </div>
     );  
 }

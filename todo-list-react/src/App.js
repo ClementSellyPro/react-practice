@@ -6,13 +6,9 @@ import { useMemo, useState } from 'react';
 import taskContext from './context/task.context';
 
 function App() {
-  
-  const [checked, setChecked] = useState(false);
-  const [idElement, setIdElement] = useState('');
 
-  function handleCheckClick(e){
-    setChecked(!checked);
-  }
+  const [inputTask, setInputTask] = useState('');
+  const [taskList, setTaskList] = useState([]);
 
   const test = useMemo(() => {
     return ['yes', 'no', 'no']
@@ -20,17 +16,17 @@ function App() {
 
   return (
     <taskContext.Provider value={{
-      taskList: test,
-      //setTaskList: setTaskList,
-      checked: checked,
-      setChecked: setChecked,
-      handleCheckClick: handleCheckClick,
-      idElement: idElement,
-      setIdElement: setIdElement
+      taskList: taskList,
     }}>
       <div className="App">
         <Header />
-        <InputComponent />
+
+        <InputComponent 
+        inputTask={inputTask} 
+        setInputTask={setInputTask}
+        taskList={taskList}
+        setTaskList={setTaskList} />
+
         <TodoList />
       </div>
     </taskContext.Provider>
