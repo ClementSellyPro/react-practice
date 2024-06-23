@@ -10,21 +10,28 @@ function TodoList(){
     const [checked, setChecked] = useState(false);
     const [filter, setFilter] = useState('all');
 
+    const {taskList, setTaskList} = useContext(taskContext);
+
     function handleCheckClick(e){
       setChecked(!checked);
     }
 
     /*
-     * Function to handle the click on the delete icon to delete the right element
+     * Function to handle the click on the delete icon and delete the right element
     */
     function handleDelete(e){
         let targetElement = e.target.parentElement.parentElement; 
         let targetId = targetElement.dataset.id; 
-        console.log(targetId);
+        
+        let modifiedTaskList = [];
+        for(let i = 0; i < taskList.length; i++){
+            if(i !== Number(targetId)){
+                modifiedTaskList.push(taskList[i]);
+            console.log('IDDD >>>>>>> ', targetId);
+            }
+        }
+        setTaskList(modifiedTaskList);
     }
-
-    const {taskList} = useContext(taskContext);
-
 
     return (
         <div className='TodoList'>

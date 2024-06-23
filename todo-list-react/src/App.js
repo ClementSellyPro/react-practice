@@ -17,6 +17,7 @@ function App() {
   return (
     <taskContext.Provider value={{
       taskList: taskList,
+      setTaskList: setTaskList
     }}>
       <div className="App">
         <Header />

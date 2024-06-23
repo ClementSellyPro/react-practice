@@ -14,7 +14,7 @@ function InputComponent({inputTask, setInputTask, taskList, setTaskList}){
     * Set the inputTask
     */
     function handleInput(e){
-        setInputTask(e.target.value);
+        setInputTask(e.target.value);    
     }
 
     /*
@@ -22,8 +22,10 @@ function InputComponent({inputTask, setInputTask, taskList, setTaskList}){
     */
     function handleEnterPress(e){
         if(e.key === "Enter"){
+            if(e.target.value !== ''){
             setTaskList([...taskList, inputTask]);
             setInputTask('');
+            }
         }
     }
 
