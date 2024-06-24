@@ -23,8 +23,10 @@ function InputComponent({inputTask, setInputTask, taskList, setTaskList}){
     function handleEnterPress(e){
         if(e.key === "Enter"){
             if(e.target.value !== ''){
-            setTaskList([...taskList, inputTask]);
+                let updatedTaskList = [...taskList, inputTask];
+            setTaskList(updatedTaskList);
             setInputTask('');
+            localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
             }
         }
     }

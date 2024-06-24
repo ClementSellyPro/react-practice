@@ -2,11 +2,11 @@ import Checkbox from "./Checkbox";
 import deleteIcon from '../images/icon-cross.svg'
 
 
-function Task({children, id, handleDelete}){
+function Task({children, id, handleDelete, handleCheckClick, isChecked}){
 
     return (
         <div className='task' data-id={id}>
-            <Checkbox></Checkbox>
+            <Checkbox handleCheckClick={handleCheckClick} isChecked={isChecked}></Checkbox>
             <div className='task-text'>
                 {children}
             </div>
