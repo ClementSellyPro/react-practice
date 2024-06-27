@@ -9,7 +9,8 @@ function App() {
 
   const [inputTask, setInputTask] = useState('');
   const [taskList, setTaskList] = useState([]);
-
+  const [activeTaskList, setActiveTaskList] = useState([]);
+  
   const test = useMemo(() => {
     return ['yes', 'no', 'no']
   }, []);
@@ -17,7 +18,9 @@ function App() {
   return (
     <taskContext.Provider value={{
       taskList: taskList,
-      setTaskList: setTaskList
+      setTaskList: setTaskList,
+      activeTaskList: activeTaskList,
+      setActiveTaskList: setActiveTaskList
     }}>
       <div className="App">
         <Header />
@@ -26,7 +29,9 @@ function App() {
         inputTask={inputTask} 
         setInputTask={setInputTask}
         taskList={taskList}
-        setTaskList={setTaskList} />
+        setTaskList={setTaskList}
+        activeTaskList={activeTaskList}
+        setActiveTaskList={setActiveTaskList} />
 
         <TodoList />
       </div>

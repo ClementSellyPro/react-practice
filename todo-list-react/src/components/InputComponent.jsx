@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../style/InputComponent.css';
 import checkedIcon from '../images/icon-check.svg';
 
-function InputComponent({inputTask, setInputTask, taskList, setTaskList}){
+function InputComponent({inputTask, setInputTask, taskList, setTaskList, activeTaskList, setActiveTaskList}){
 
     const [checked, setChecked] = useState(false);
 
@@ -24,9 +24,11 @@ function InputComponent({inputTask, setInputTask, taskList, setTaskList}){
         if(e.key === "Enter"){
             if(e.target.value !== ''){
                 let updatedTaskList = [...taskList, inputTask];
-            setTaskList(updatedTaskList);
-            setInputTask('');
-            localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
+                setTaskList(updatedTaskList);
+                setActiveTaskList(updatedTaskList);
+                setInputTask('');
+                localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
+                localStorage.setItem('activeTaskList', JSON.stringify(updatedTaskList));
             }
         }
     }

@@ -1,6 +1,6 @@
 import '../style/InfoElement.css';
 
-function InfoElement({leftItems, filter, setFilter}){
+function InfoElement({leftItems, setFilter}){
 
     function handleFilterClick(e){
         let target = e.target;
