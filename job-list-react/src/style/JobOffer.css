@@ -1,0 +1,83 @@
+.JobOffer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(180, 52%, 96%);
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px 30px;
+    width: 100%;
+}
+.left-section{
+    display: flex;
+}
+/* --------------- JOB INFO --------------- */
+.job-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 85px;
+    margin-left: 20px;
+}
+/*  COMPANY  */
+.job-info_company{
+    display: flex;
+    gap: 10px;
+}
+.job-info_company-text{
+    color: hsl(180, 29%, 50%);
+    font-weight: 600;
+}
+.job-info_company-tags{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+.job-info_company-tag-new{
+    background-color: hsl(180, 29%, 50%);
+    padding: 3px 5px;
+    border-radius: 10px;
+}
+.job-info_company-tag-featured{
+    background-color: hsl(180, 14%, 20%);
+    padding: 3px 5px;
+    border-radius: 10px;
+}
+/*  TITLE  */
+.job-info_offer-title{
+    color: hsl(180, 14%, 20%);
+    font-weight: 700;
+}
+.job-info_offer-title:hover{
+    cursor: pointer;
+    color: hsl(180, 29%, 50%);
+}
+/*  DETAILS  */
+.job-info_details{
+    display: flex;
+    gap: 10px;
+    color: hsl(180, 8%, 52%);
+}
+.job-info_detail{
+    
+}
+/*  TAGS  */
+.job-info_tags{
+    display: flex;
+    gap: 20px;
+}
+.job-info_tag{
+    background-color: hsl(180, 39%, 90%);
+    color: hsl(180, 29%, 50%);
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+.job-info_tag:hover{
+    cursor: pointer;
+    background-color: hsl(180, 35%, 81%);
+}
