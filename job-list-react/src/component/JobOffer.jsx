@@ -18,8 +18,8 @@ function JobOffer(){
                         Fullstack Developer
                     </div>
                     <div className='job-info_details'>
-                        <div className='job-info_detail'>1d ago</div>
-                        <div className='job-info_detail'>Full Time</div>
+                        <div className='job-info_detail'>1d ago</div><div className="separator">.</div>
+                        <div className='job-info_detail'>Full Time</div><div className="separator">.</div>
                         <div className='job-info_detail'>USA only</div>
                     </div>
                 </div>
