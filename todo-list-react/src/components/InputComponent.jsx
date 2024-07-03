@@ -32,7 +32,7 @@ function InputComponent({inputTask, setInputTask, taskList, setTaskList, activeT
             }
         }
     }
-
+    
     return (
         <div className='InputComponent'>
             <div className='input-user-section'>

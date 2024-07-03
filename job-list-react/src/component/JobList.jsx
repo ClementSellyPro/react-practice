@@ -1,4 +1,9 @@
+/**
+ * Display all available jobs
+ * @param {ComponentElement} children
+ */
 import '../style/JobList.css';
+
 
 function JobList({children}){
 
