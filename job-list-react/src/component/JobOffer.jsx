@@ -1,10 +1,10 @@
 import '../style/JobOffer.css';
 
-function JobOffer({company, logo, position, postAt, contract, location, tools}){
+function JobOffer({company, logo, position, postAt, contract, location, role, level, languages, tools}){
     return (
         <div className='JobOffer'>
             <div className='left-section'>
-                <img src={logo} alt='profile test'></img>
+                <img src={logo} alt='profile pic' />
                 <div className='job-info'>
                     <div className='job-info_company'>
                         <p className='job-info_company-text'>{company}</p>
@@ -25,9 +25,15 @@ function JobOffer({company, logo, position, postAt, contract, location, tools}){
             </div>
 
             <div className='job-info_tags'>
-                <div className='job-info_tag'>Frontend</div>
-                <div className='job-info_tag'>Senior</div>
-                <div className='job-info_tag'>HTML</div>
+                <div className='job-info_tag'>{role}</div>
+                <div className='job-info_tag'>{level}</div>
+                {languages.map((language) => {
+                    return <div className='job-info_tag'>{language}</div>
+                })}
+                {tools.map((tool) => {
+                    return <div className='job-info_tag'>{tool}</div>
+                })
+                }
             </div>
         </div>
     );

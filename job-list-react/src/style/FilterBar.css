@@ -43,6 +43,9 @@
     cursor: pointer;
     background-color: hsl(180, 14%, 20%);
 }
+.filter-item_delete-icon:active{
+    background-color: hsl(180, 29%, 50%);
+}
 
 .clear-btn{
     position: absolute;
@@ -54,4 +57,7 @@
 .clear-btn:hover{
     cursor: pointer;
     text-decoration: underline;
+}
+.clear-btn:active{
+    color: hsl(180, 35%, 67%);;
 }
