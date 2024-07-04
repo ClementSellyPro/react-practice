@@ -17,13 +17,16 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
 }
 .filter-item{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: hsl(180, 41%, 84%);
-    width: 120px;
     height: 30px;
     border-radius: 5px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding-right: 40px;
 }
 .filter-item_text{
     color: hsl(180, 29%, 50%);
@@ -31,6 +34,8 @@
     margin-left: 10px;
 }
 .filter-item_delete-icon{
+    position: absolute;
+    right: 0px;
     display: flex;
     justify-content: center;
     align-items: center;

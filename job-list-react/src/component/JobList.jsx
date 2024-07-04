@@ -4,7 +4,6 @@
  */
 import '../style/JobList.css';
 
-
 function JobList({children}){
 
     return (

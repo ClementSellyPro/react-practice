@@ -8,7 +8,8 @@ function App() {
 
   const [jobData, setJobData] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [filterList, setFilterList] = useState([]);
+  // fetch data from API file
   useEffect(() => {
     const fetchData = async () => {
       try{
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <FilterBar />
+      <FilterBar filterList={filterList} setFilterList={setFilterList}/>
       
       <JobList>
         {loading ? '... loading' :
@@ -45,6 +46,9 @@ function App() {
                               level={job.level}
                               languages={job.languages}
                               tools={job.tools} 
+                              featured={job.featured}
+                              filterList={filterList}
+                              setFilterList={setFilterList}
                     />
           })
         }
