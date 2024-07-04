@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [jobData, setJobData] = useState([]);
+  const [displayedJob, setDisplayedJob] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filterList, setFilterList] = useState([]);
   // fetch data from API file
@@ -16,9 +17,7 @@ function App() {
         let response = await fetch('/data.json');
         let fetchedData = await response.json();
 
-        if(Array.isArray(fetchedData)){
-          setJobData(fetchedData);
-        }
+        setJobData(fetchedData);
       } catch(error){
         console.log(error.message);
       } finally{
@@ -28,13 +27,25 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if(filterList.length === 0){
+      setDisplayedJob(jobData);
+    }else{
+      let filteredData = jobData.filter((job) => {
+        return filterList.includes(job.level) || filterList.includes(job.role);
+      });
+      setDisplayedJob(filteredData);
+    }
+  }, [filterList, jobData]);
+
   return (
     <div className="App">
-      <FilterBar filterList={filterList} setFilterList={setFilterList}/>
+      {/* display only when there is filters activated */}
+      {filterList.length !== 0 && <FilterBar filterList={filterList} setFilterList={setFilterList}/>}
       
       <JobList>
         {loading ? '... loading' :
-          jobData.map((job) => {
+          displayedJob.map((job) => {
             return <JobOffer  key={job.id}  
                               company={job.company} 
                               logo={job.logo} 

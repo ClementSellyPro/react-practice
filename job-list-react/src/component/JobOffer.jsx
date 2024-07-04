@@ -12,7 +12,7 @@
  * @param {string} location
  * @param {string} role
  * @param {string} level
- * @param {boolean} feqtured
+ * @param {boolean} featured
  */
 import '../style/JobOffer.css';
 
@@ -35,13 +35,12 @@ function JobOffer({ filterList, setFilterList, company, logo, position,
     return (
         <div className='JobOffer'>
             <div className='left-section'>
-                <img src='../images/manage.svg' alt='profile pic' />
+                <img src={logo} alt='profile pic' />
                 <div className='job-info'>
                     <div className='job-info_company'>
                         <p className='job-info_company-text'>{company}</p>
                         <div className='job-info_company-tags'>
-                            {(postAt === '1d ago') ? <div className='job-info_company-tag-new'>NEW!</div> : null}
-                            {(postAt === '2d ago') ? <div className='job-info_company-tag-new'>NEW!</div> : null}
+                            {(postAt === '1d ago') || (postAt === '2d ago') ? <div className='job-info_company-tag-new'>NEW!</div> : null}
                             
                             {(featured) ? <div className='job-info_company-tag-featured'>FEATURED</div> : null}
                         </div>

@@ -7,9 +7,9 @@ function FilterBar({filterList, setFilterList}){
         let target = e.target.parentElement;
         // get the clicked item
         if(target.classList.contains('filter-item')){
-            target = e.target.parentElement.textContent
+            target = e.target.parentElement.textContent;
         }else if(target.classList.contains('filter-item_delete-icon')){
-            target = e.target.parentElement.parentElement.textContent
+            target = e.target.parentElement.parentElement.textContent;
         }
         // update the filterList with removing the clicked item
         let updatedFilterList = filterList.filter((filterItem) => {
