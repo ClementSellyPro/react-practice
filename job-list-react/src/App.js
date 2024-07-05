@@ -32,6 +32,35 @@ function App() {
       setDisplayedJob(jobData);
     }else{
       let filteredData = jobData.filter((job) => {
+        let languagesList = job.languages;
+        let selectedLanguageIndex = null;
+
+        for(let i = 0; i < languagesList.length; i++){
+          if(filterList.includes(languagesList[i])){
+            selectedLanguageIndex = i;
+          }
+        }
+
+        let toolsList = job.tools;
+        let selectedToolIndex = null
+
+        for(let i = 0; i < toolsList.length; i++){
+          if(filterList.includes(toolsList[i])){
+            selectedToolIndex = i;
+          }
+        }
+
+        if(selectedToolIndex !== null){
+          return  filterList.includes(job.level) || 
+                  filterList.includes(job.role) || 
+                  filterList.includes(languagesList[selectedLanguageIndex]) || 
+                  filterList.includes(toolsList[selectedToolIndex]);
+        }
+        if(selectedLanguageIndex !== null){
+          return  filterList.includes(job.level) || 
+                  filterList.includes(job.role) || 
+                  filterList.includes(languagesList[selectedLanguageIndex]);
+        }
         return filterList.includes(job.level) || filterList.includes(job.role);
       });
       setDisplayedJob(filteredData);
