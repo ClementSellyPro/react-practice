@@ -1,0 +1,14 @@
+.primary-btn{
+    border: none;
+    background-color: hsl(180, 66%, 49%);
+    color: white;
+    padding: 10px 30px;
+    font-size: 1.4em;
+    font-weight: 700;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+.primary-btn:hover{
+    cursor: pointer;
+    background-color: hsl(180, 59%, 75%);
+}

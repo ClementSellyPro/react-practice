@@ -1,0 +1,60 @@
+.NavBar{
+    margin-top: 20px;
+    padding: 20px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+.link-section{
+    width: 500px;
+    display: flex;
+
+}
+.links{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 50px;
+}
+.links li{
+    list-style: none;
+    font-weight: 700;
+    color: hsl(257, 7%, 63%);
+}
+
+.login-section{
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-btn{
+    background-color: transparent;
+    border: none;
+    color: hsl(257, 7%, 63%);
+}
+.signup-btn{
+    background-color: hsl(180, 66%, 49%);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+}
+.login-btn, .signup-btn{
+    font-weight: 700;
+}
+
+.links li:hover, .login-btn:hover{
+    cursor: pointer;
+    color: hsl(257, 27%, 26%);
+}
+.signup-btn:hover{
+    background-color: hsl(180, 59%, 75%);
+}
+.login-btn:hover, .signup-btn:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,51 @@
+.Footer{
+    background-color: hsl(260, 8%, 14%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 80px 200px;
+}
+
+.logo-inverted{
+    filter: invert();
+}
+
+.list-section{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    width: 40%;
+}
+.list{
+}
+.list-title{
+    list-style: none;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.list-item{
+    list-style: none;
+    color: hsl(0, 0%, 75%);
+    margin-bottom: 8px;
+}
+.list-item:hover, .list-title:hover{
+    cursor: pointer;
+    color: hsl(180, 66%, 49%);
+}
+
+.social-media-section{
+
+}
+.social-media-list{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.social-media-list li{
+    list-style: none;
+}
+.social-media-list li:hover{
+    cursor: pointer;
+    filter: invert(37%) sepia(95%) saturate(451%) hue-rotate(131deg) brightness(100%) contrast(87%);
+}
