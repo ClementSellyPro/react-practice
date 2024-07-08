@@ -1,0 +1,29 @@
+.Hero{
+    position: relative;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 200px;
+}
+
+.hero-text-section{
+    width: 70%;
+}
+.hero-title{
+    color: hsl(255, 11%, 22%);
+    font-weight: 700;
+    font-size: 5em;
+    line-height: 90px;
+}
+.hero-paragraph{
+    color: hsl(257, 7%, 63%);
+    font-size: 1.5em;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.Hero img{
+    position: absolute;
+    right: -100px;
+}
