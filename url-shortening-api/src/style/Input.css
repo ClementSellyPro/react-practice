@@ -8,6 +8,7 @@
     border-radius: 10px;
     transform: translateY(50px);
     padding: 30px 0px;
+    z-index: 2;
 }
 .input-contain{
     display: flex;

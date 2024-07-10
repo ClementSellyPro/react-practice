@@ -1,0 +1,38 @@
+.ResultUnit{
+    margin: 0px 133px;
+    margin-top: 15px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.original-link{
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.result-section{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.result-link{
+    color: hsl(180, 66%, 49%);
+    font-weight: 500;
+}
+.result-btn{
+    background-color: hsl(180, 66%, 49%);
+    color: white;
+    border: none;
+    padding: 7px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.result-btn:hover{
+    cursor: pointer;
+    background-color: hsl(180, 59%, 75%);
+}
