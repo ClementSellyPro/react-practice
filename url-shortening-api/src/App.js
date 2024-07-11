@@ -6,14 +6,18 @@ import ResultSection from './component/ResultSection';
 import AdvancedStat from './component/AdvancedStat';
 import BoostSection from './component/BoostSection';
 import Footer from './component/Footer';
+import { useState } from 'react';
 
 function App() {
+
+  const [resultList, setResultList] = useState([]);
+
   return (
     <div className="App">
       <NavBar />
       <Hero />
-      <Input />
-      <ResultSection />
+      <Input setResultlist={setResultList} />
+      <ResultSection resultList={resultList} />
       <AdvancedStat> </AdvancedStat>
       <BoostSection />
       <Footer />

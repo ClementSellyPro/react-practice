@@ -1,11 +1,11 @@
 import '../style/ResultUnit.css';
 
-function ResultUnit(){
+function ResultUnit({link, shortenLink}){
     return (
         <div className='ResultUnit'>
-            <div className='original-link'>https://www.bestsite.com/hfjdskfhsj</div>
+            <div className='original-link'>{link}</div>
             <div className='result-section'>
-                <div className='result-link'>https://relink/k4yk</div>
+                <div className='result-link'>{shortenLink}</div>
                 <button type='button' className='result-btn'>Copy</button>
             </div>
         </div>
