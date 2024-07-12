@@ -12,12 +12,14 @@ function Input({setResultlist}){
     function handleSubmit(){
         fetch('https://cleanuri.com/api/v1/shorten', {
             method: 'POST',
+            mode:"no-cors",
             headers: {'Content-Type': 'application/json'},
-            body: userInput
-        }).then((res) => res.text())
-        .then(data => console.log(data))
+            body: JSON.stringify(encodeURIComponent(userInput))
+        }).then(res => console.log("RESSSS ", res))
+        .then(data => console.log('DATAAAAA ',data))
+        .catch(error => console.log(error));
     }
-
+// curl -XPOST -d 'url=https%3A%2F%2Fgoogle.com%2F' 'https://cleanuri.com/api/v1/shorten'
     return (
         <div className='Input'>
             <div className='input-contain'>
