@@ -15,7 +15,7 @@ function Input({setResultlist}){
             mode:"no-cors",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(encodeURIComponent(userInput))
-        }).then(res => console.log("RESSSS ", res))
+        }).then(res => res.text())
         .then(data => console.log('DATAAAAA ',data))
         .catch(error => console.log(error));
     }
