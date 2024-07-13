@@ -1,0 +1,33 @@
+.FilterSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+}
+
+.FilterSection___user-input-section{
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 400px;
+}
+.FilterSection___user-input{
+    border: none;
+    padding-left: 15px;
+    width: 80%;
+    height: 30px;
+}
+.FilterSection___user-input:focus{
+    outline: none;
+}
+
+.FilterSection___countries{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    padding: 15px 20px;
+}
+.FilterSection___countries:hover{
+    cursor: pointer;
+}

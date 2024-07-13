@@ -1,0 +1,29 @@
+.Header{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 0px 60px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+.Header__title{
+    font-weight: 700;
+    font-size: 1.4em;
+}
+.Header__theme-section{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+.Header__theme-section p{
+    margin-left: 10px;
+    font-weight: 600;
+}
+.Header__theme-section:hover{
+    cursor: pointer;
+}
+.Header__theme-section p:hover{
+    text-decoration: underline;
+}
