@@ -2,14 +2,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 60px;
+    padding: 50px 90px;
 }
 
 .FilterSection___user-input-section{
     background-color: white;
     padding: 15px 20px;
     border-radius: 5px;
-    width: 400px;
+    width: 500px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 .FilterSection___user-input{
     border: none;
@@ -25,8 +26,8 @@
     background-color: white;
     border: none;
     border-radius: 5px;
-    width: 150px;
-    padding: 15px 20px;
+    width: 200px;
+    padding: 20px 20px;
 }
 .FilterSection___countries:hover{
     cursor: pointer;

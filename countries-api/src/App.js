@@ -1,12 +1,10 @@
 import './App.css';
-import Header from '../src/component/Header';
-import FilterSection from './component/FilterSection';
+import Home from './page/Home';
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <FilterSection></FilterSection>
+      <Home></Home>
     </div>
   );
 }

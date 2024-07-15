@@ -1,0 +1,34 @@
+.Card{
+    background-color: white;
+    width: fit-content;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.Card__flag{
+    width: 100%;
+    height: 150px;
+    background-color: #222;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.Card__description{
+    padding: 25px 35px 50px 20px;
+}
+
+.Card__description__title{
+    font-size: 1.2em;
+}
+
+.Card__description__details{
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+.Card__description__details p{
+    margin-bottom: 5px;
+}
+
+.Card__description__details p strong{
+    font-weight: 600;
+}
