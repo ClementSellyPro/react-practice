@@ -3,18 +3,21 @@ import FilterSection from '../component/FilterSection';
 import CardsContainer from '../component/CardsContainer';
 import Card from '../component/Card';
 
-function Home(){
+function Home({countries}){
     return (
         <div className="Home">
             <Header />
             <FilterSection />
             <CardsContainer>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {countries.map((country) => {
+                    return <Card 
+                        name={country.name} 
+                        flag={country.flag} 
+                        population={country.population}
+                        region={country.region} 
+                        capital={country.capital}>
+                    </Card>
+                })}
             </CardsContainer>
         </div>
     );
