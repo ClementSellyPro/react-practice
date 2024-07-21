@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Home from './page/Home';
+import DetailPage from './page/DetailPage';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Home countries={countries}></Home>
+      {/* <DetailPage></DetailPage> */}
     </div>
   );
 }
