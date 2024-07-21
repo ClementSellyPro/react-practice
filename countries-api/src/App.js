@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Home from './page/Home';
 import DetailPage from './page/DetailPage';
@@ -6,6 +6,7 @@ import DetailPage from './page/DetailPage';
 function App() {
 
   const [countries, setCountries] = useState([]);
+  const AppRef = useRef();
 
   useEffect(() => {
     fetch('/data.json')
@@ -14,8 +15,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Home countries={countries}></Home>
+    <div ref={AppRef} className="App">
+      <Home countries={countries} AppRef={AppRef}></Home>
       {/* <DetailPage></DetailPage> */}
     </div>
   );

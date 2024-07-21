@@ -4,14 +4,14 @@ import FilterSection from '../component/FilterSection';
 import CardsContainer from '../component/CardsContainer';
 import Card from '../component/Card';
 
-function Home({countries}){
+function Home({countries, AppRef}){
 
     const [inputFilter, setInputFilter] = useState('');
     const [selectedRegion, setSelectedRegion] = useState('All');
 
     return (
         <div className="Home">
-            <Header />
+            <Header AppRef={AppRef} />
             <FilterSection setInputFilter={setInputFilter} setSelectedRegion={setSelectedRegion} />
             <CardsContainer>
                 {countries

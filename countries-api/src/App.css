@@ -1,3 +1,15 @@
 .App{
-  background-color: rgb(240, 240, 240);
+  background-color: var(--background-color);
+}
+
+:root{
+  --background-color: #eee;
+  --background-element: #ffffff;
+  --text-color: #0d0d0d;
+}
+
+.dark{
+  --background-color: #252e35;
+  --background-element: #2e3541;
+  --text-color: #eee;
 }

@@ -4,7 +4,7 @@ import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
  
-function Header(){
+function Header({AppRef}){
     const [theme, setTheme] = useState('light');
 
     function handleThemeTogle(){
@@ -13,6 +13,7 @@ function Header(){
         }else{
             setTheme('light');
         }
+        AppRef.current.classList.toggle('dark');
     }
 
     return (
