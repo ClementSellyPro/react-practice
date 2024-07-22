@@ -6,6 +6,7 @@ import DetailPage from './page/DetailPage';
 function App() {
 
   const [countries, setCountries] = useState([]);
+  const [currentCountry, setCurrentCountry] = useState(0);
   const AppRef = useRef();
 
   useEffect(() => {
@@ -16,8 +17,8 @@ function App() {
 
   return (
     <div ref={AppRef} className="App">
-      <Home countries={countries} AppRef={AppRef}></Home>
-      {/* <DetailPage></DetailPage> */}
+      {/* <Home countries={countries} setCurrentCountry={setCurrentCountry} AppRef={AppRef}></Home> */}
+      <DetailPage countries={countries} currentCountry={currentCountry} AppRef={AppRef}></DetailPage>
     </div>
   );
 }

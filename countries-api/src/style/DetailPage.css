@@ -1,0 +1,10 @@
+.DetailPage{
+    background-color: var(--background-color);
+}
+
+.DetailPage-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 180px 90px;
+    position: relative;
+}

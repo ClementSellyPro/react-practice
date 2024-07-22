@@ -5,6 +5,10 @@
     border-radius: 5px;
     margin-right: 10px;
 }
+.Card:hover{
+    cursor: pointer;
+    background-color: var(--background-element-hover);
+}
 
 .Card__flag-bloc{
     height: 150px;
