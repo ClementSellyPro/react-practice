@@ -8,6 +8,7 @@ function App() {
 
   const [countries, setCountries] = useState([]);
   const [currentCountry, setCurrentCountry] = useState([47]);
+  const [selectedRegion, setSelectedRegion] = useState('All');
   const AppRef = useRef();
 
   useEffect(() => {
@@ -23,6 +24,8 @@ function App() {
                   countries={countries} 
                   currentCountry={currentCountry} 
                   setCurrentCountry={setCurrentCountry} 
+                  selectedRegion={selectedRegion}
+                  setSelectedRegion={setSelectedRegion}
                   AppRef={AppRef} 
                 />
     },
@@ -31,6 +34,7 @@ function App() {
       element: <DetailPage  
                   countries={countries} 
                   currentCountry={currentCountry} 
+                  selectedRegion={selectedRegion}
                   AppRef={AppRef} 
                 />
     },

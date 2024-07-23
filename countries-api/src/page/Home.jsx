@@ -5,10 +5,10 @@ import CardsContainer from '../component/CardsContainer';
 import Card from '../component/Card';
 import { NavLink } from 'react-router-dom';
 
-function Home({countries, currentCountry, setCurrentCountry, AppRef}){
+function Home({countries, setCurrentCountry, AppRef, selectedRegion, setSelectedRegion}){
 
     const [inputFilter, setInputFilter] = useState('');
-    const [selectedRegion, setSelectedRegion] = useState('All');
+    // const [selectedRegion, setSelectedRegion] = useState('All');
 
     return (
         <div className="Home">

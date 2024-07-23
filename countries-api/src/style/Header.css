@@ -1,4 +1,5 @@
 .Header{
+    position: sticky;
     background-color: var(--background-element);
     color: var(--text-color);
     display: flex;

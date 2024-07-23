@@ -1,10 +1,10 @@
 import '../style/BigFlag.css';
 
-function BigFlag({countries, currentCountry}){
+function BigFlag({currentCountry, currentListedCountries}){
 
     return (
         <div className='BigFlag'>
-            <img src={countries[currentCountry].flags.png} alt='flag' />
+            <img src={currentListedCountries[currentCountry].flags.png} alt='flag' />
         </div>
     )
 }
