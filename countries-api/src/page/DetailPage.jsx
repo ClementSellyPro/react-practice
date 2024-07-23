@@ -4,14 +4,14 @@ import Details from '../component/Details';
 import BigFlag from '../component/BigFlag';
 import BackButton from "../component/BackButton";
 
-function DetailPage({AppRef}){
+function DetailPage({countries, currentCountry, AppRef}){
     return (
         <div className="DetailPage">
             <Header AppRef={AppRef} />
             <div className='DetailPage-content'>
                 <BackButton />
-                <BigFlag />
-                <Details /> 
+                <BigFlag countries={countries} currentCountry={currentCountry} />
+                <Details countries={countries} currentCountry={currentCountry} /> 
             </div>
         </div>
     );

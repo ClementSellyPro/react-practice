@@ -1,5 +1,8 @@
 .BigFlag{
     width: 520px;
     height: 350px;
-    background-color: rgb(73, 152, 152);
+}
+
+.BigFlag img{
+    width: 100%;
 }

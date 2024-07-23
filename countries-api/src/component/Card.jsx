@@ -1,8 +1,13 @@
 import '../style/Card.css';
 
-function Card({name, flag, population, region, capital}){
+function Card({id, name, flag, population, region, capital, setCurrentCountry}){
+
+    function handleCardClick(){
+        setCurrentCountry(id);
+    }
+
     return (
-        <div className='Card'>
+        <div className='Card' onClick={handleCardClick} data-id={id}>
             <div className='Card__flag-bloc'>
                 <img className='Card__flag' src={flag} alt='flag'></img>
             </div>
