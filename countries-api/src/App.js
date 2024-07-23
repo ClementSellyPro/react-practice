@@ -47,8 +47,6 @@ function App() {
   return (
     <div ref={AppRef} className="App">
       <RouterProvider router={router} />
-      {/* <Home countries={countries} setCurrentCountry={setCurrentCountry} AppRef={AppRef} /> */}
-      {/* <DetailPage countries={countries} currentCountry={currentCountry} AppRef={AppRef} /> */}
     </div>
   );
 }

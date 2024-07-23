@@ -8,7 +8,6 @@ import { NavLink } from 'react-router-dom';
 function Home({countries, setCurrentCountry, AppRef, selectedRegion, setSelectedRegion}){
 
     const [inputFilter, setInputFilter] = useState('');
-    // const [selectedRegion, setSelectedRegion] = useState('All');
 
     return (
         <div className="Home">
@@ -22,6 +21,9 @@ function Home({countries, setCurrentCountry, AppRef, selectedRegion, setSelected
                     }else{
                         return true;
                     }
+                })
+                .filter(country => {
+                    return country.name.toLowerCase().includes(inputFilter);
                 })
                 .map((country, index) => {
                     return <NavLink to='/detail' key={index}><Card 
