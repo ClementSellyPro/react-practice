@@ -4,7 +4,7 @@ import Details from '../component/Details';
 import BigFlag from '../component/BigFlag';
 import BackButton from "../component/BackButton";
 
-function DetailPage({countries, currentCountry, AppRef, selectedRegion}){
+function DetailPage({countries, currentCountry, AppRef, selectedRegion, setSelectedRegion}){
 
     let currentListedCountries = countries.filter((country) => {
         if(selectedRegion !== 'All'){
@@ -18,7 +18,7 @@ function DetailPage({countries, currentCountry, AppRef, selectedRegion}){
         <div className="DetailPage">
             <Header AppRef={AppRef} />
             <div className='DetailPage-content'>
-                <BackButton />
+                <BackButton setSelectedRegion={setSelectedRegion} />
                 <BigFlag currentCountry={currentCountry} currentListedCountries={currentListedCountries} />
                 <Details currentCountry={currentCountry} currentListedCountries={currentListedCountries} /> 
             </div>

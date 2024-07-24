@@ -2,7 +2,6 @@ import '../style/Details.css';
 
 function Details({currentCountry, currentListedCountries}){
 
-
     let languages = currentListedCountries[currentCountry].languages;
     if(languages === undefined){
         languages = [];
@@ -14,7 +13,7 @@ function Details({currentCountry, currentListedCountries}){
     }
 
     let currencies = '';
-    if(currencies){
+    if(currentListedCountries[currentCountry].hasOwnProperty('currencies')){
         currencies = currentListedCountries[currentCountry].currencies[0].name;
     }
 

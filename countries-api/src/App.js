@@ -35,6 +35,7 @@ function App() {
                   countries={countries} 
                   currentCountry={currentCountry} 
                   selectedRegion={selectedRegion}
+                  setSelectedRegion={setSelectedRegion}
                   AppRef={AppRef} 
                 />
     },

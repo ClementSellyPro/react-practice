@@ -44,3 +44,7 @@
 .Card__description__details p strong{
     font-weight: 600;
 }
+
+a{
+    text-decoration: none;
+}
