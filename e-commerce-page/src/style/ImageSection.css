@@ -1,0 +1,27 @@
+.ImageSection{
+    width: 380px;
+}
+
+.main-image{
+    width: 380px;
+    border-radius: 10px;
+}
+
+.ImageList{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.imageList-item{
+    width: 80px;
+    border-radius: 5px;
+}
+.imageList-item:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+.selected-item{
+    opacity: 0.6;
+    border: 2px solid var(--orange);
+}

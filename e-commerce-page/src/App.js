@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import ImageSection from './components/ImageSection';
 import { CartContextProvider } from './context/cart.context';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <CartContextProvider>
       <div className="App">
         <Header />
+        <ImageSection />
       </div>
     </CartContextProvider>
   );

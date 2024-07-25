@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 let CartContext = createContext({
     listItem: [],
@@ -21,3 +21,9 @@ const CartContextProvider = ({children}) => {
 }
 
 export {CartContextProvider};
+
+
+export const useCartContext = () => {
+    const contextValue = useContext(CartContext);
+    return contextValue;
+}

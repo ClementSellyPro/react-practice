@@ -1,12 +1,12 @@
 import '../style/Cart.css';
 import cartIcon from '../images/icon-cart.svg';
-import { useContext, useState } from 'react';
-import CartContext from '../context/cart.context';
+import { useState } from 'react';
+import {useCartContext} from '../context/cart.context';
 
 function Cart(){
 
     const [activeCart, setActiveCart] = useState(false);
-    const {listItem} = useContext(CartContext);
+    const {listItem} = useCartContext();
 
     function handleActiveCart(){
         setActiveCart(!activeCart);
