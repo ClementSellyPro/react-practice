@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import '../style/ImageSection.css';
 import ImageList from './ImageList';
 import image1 from '../images/image-product-1.jpg';
@@ -24,32 +24,14 @@ function ImageSection(){
         // set the new selected thumbnail
         e.target.classList.add('selected-item');
     }
-
-    // useEffect(() => {
-    //     function changeImage(){
-    //         switch (currentSelectedImage){
-    //             case 1:
-    //                 return image1;
-    //             case 2:
-    //                 return image2;
-    //             case 3:
-    //                 return image3;
-    //             case 4:
-    //                 return image4;
-    //             default:
-    //                 return image1
-    //         }
-    //     }
-    // }, [currentSelectedImage]);
     
-
     return (
         <div className='ImageSection'>
             <img className='main-image' 
                 src={
-                    currentSelectedImage === '1' ? image1 : 
-                    currentSelectedImage === '2' ? image2 : 
-                    currentSelectedImage === '3' ? image3 : image4
+                    currentSelectedImage === '4' ? image4 : 
+                    currentSelectedImage === '3' ? image3 : 
+                    currentSelectedImage === '2' ? image2 : image1
                     } alt='Product' 
             />
             <ImageList handleChangeImage={handleChangeImage} currentSelectedImage={currentSelectedImage} />

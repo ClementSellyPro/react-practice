@@ -1,2 +1,9 @@
-
+.page-content{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    min-width: 850px;
+    margin: auto;
+    padding: 100px 40px;
+}
 

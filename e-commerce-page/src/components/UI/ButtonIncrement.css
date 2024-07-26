@@ -1,0 +1,32 @@
+.ButtonIncrement{
+    background-color: var(--light-grayish);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    border-radius: 8px;
+}
+
+.minus-icon{
+    width: 10px;
+    height: 5px;
+}
+
+.item-number{
+    font-weight: 600;
+}
+
+.plus-icon{
+    width: 10px;
+    height: 10px;
+}
+
+.minus-icon:hover, .plus-icon:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+.minus-icon:active, .plus-icon:active{
+    opacity: 1;
+}

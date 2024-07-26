@@ -3,6 +3,7 @@ import image2tb from '../images/image-product-2-thumbnail.jpg';
 import image3tb from '../images/image-product-3-thumbnail.jpg';
 import image4tb from '../images/image-product-4-thumbnail.jpg';
 
+// display all thumbnails about the product
 function ImageList({handleChangeImage}){
     return (
         <div className="ImageList">

@@ -1,0 +1,26 @@
+.ButtonPrimary{
+    background-color: var(--orange);
+    width: fit-content;
+    height: 50px;
+    padding: 15px 50px;
+    border-radius: 5px;
+    border: none;
+
+    font-size: 0.8em;
+    font-weight: 700;
+    color: var(--very-dark-blue);
+}
+
+.cart-icon-btn{
+    filter: brightness(0);
+    width: 15%;
+    margin-right: 15px;
+}
+
+.ButtonPrimary:hover{
+    cursor: pointer;
+    background-color: var(--orange-hover);
+}
+.ButtonPrimary:active{
+    background-color: var(--orange);
+}
