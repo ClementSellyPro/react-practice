@@ -1,14 +1,15 @@
 import '../style/Cart.css';
 import cartIcon from '../images/icon-cart.svg';
 import deleteIcon from '../images/icon-delete.svg';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {useCartContext} from '../context/cart.context';
 import ButtonPrimary from './UI/ButtonPrimary';
+import productThumbnail from '../images/image-product-1-thumbnail.jpg';
 
 function Cart(){
 
     const [activeCart, setActiveCart] = useState(false);
-    const {listItem, setListItem} = useCartContext();
+    const {listItem, setListItem, setAmountCurrentItem} = useCartContext();
 
     // display or hide the cart
     function handleActiveCart(){
@@ -21,10 +22,27 @@ function Cart(){
         let newUpdatedList = listItem;
         newUpdatedList.splice(targetID, 1);
         setListItem(newUpdatedList);
+        setActiveCart(false);
+        setAmountCurrentItem(0);
     }
 
+    // user can close the card display when clicking outside it
+    const cartRef = useRef();
+    useEffect(() => {
+        function handleClick(e){
+            if(!cartRef.current.contains(e.target)){
+                setActiveCart(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClick);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClick);
+        }
+    })
+
     return (
-        <div className='Cart'>
+        <div ref={cartRef} className='Cart'>
             <img onClick={handleActiveCart} className='cart-icon' src={cartIcon} alt='Cart Icon' />
             {activeCart && <div className='Cart_section'>
                 <div className='Cart_header'>
@@ -38,7 +56,7 @@ function Cart(){
                         let currentPrice = item.price - (item.price * 50/100);
                         return (
                             <div key={index} data-id={index} className='Cart_item'>
-                                {/* <img /> */}
+                                <img className='Cart_item-thumbnail' src={productThumbnail} alt='Product thumbnail' />
                                 <div className='Cart_item-detail'>
                                     <div className='Cart_item-name'>{item.name}</div>
                                     <div className='Cart_item-price-section'>

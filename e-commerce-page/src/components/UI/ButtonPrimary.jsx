@@ -3,12 +3,16 @@ import './ButtonPrimary.css';
 
 function ButtonPrimary({children, currentProduct}){
 
-    const {amountCurrentItem, listItem ,setListItem} = useCartContext()
+    const {amountCurrentItem, setAmountCurrentItem, listItem ,setListItem} = useCartContext()
 
+    // add amount of the product in cart user
     function handleAddItem(){
         if(amountCurrentItem > 0){
-            currentProduct['amount'] = amountCurrentItem;
-            setListItem([...listItem, currentProduct]);
+            let amount = amountCurrentItem;
+            currentProduct['amount'] = amount;
+            let newItem = {...currentProduct};
+            setListItem([...listItem, newItem]);
+            setAmountCurrentItem(0);
         }
     }
 
