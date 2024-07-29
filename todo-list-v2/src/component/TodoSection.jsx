@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import '../style/TodoSection.css';
 import TodoContext from '../context/Todo.context';
+import Todo from './Todo';
 import TodoSectionFooter from './TodoSectionFooter';
 
 function TodoSection(){
@@ -13,7 +14,9 @@ function TodoSection(){
                 todoList.length === 0 ? 
                     <div className='todo-empty'> Add new Todos to display them here </div> 
                     : 
-                    'MAPING THE LIST'
+                    todoList.map(todo =>{
+                        return <Todo task={todo.task} completed={todo.completed} />
+                    })
             }
 
             <TodoSectionFooter />
