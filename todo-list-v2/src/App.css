@@ -1,0 +1,34 @@
+@import url('/src/theme.css');
+
+.App{
+    background-color: var(--background-color);
+    /* background-image: url('/src/images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: top; */
+}
+
+body{
+    position: relative;
+}
+
+body::after{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 250px;
+    background: var(--background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: top;
+    z-index: -1;
+}
+
+.App__container{
+    height: 100vh;
+    width: 600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

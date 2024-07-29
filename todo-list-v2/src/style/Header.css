@@ -1,0 +1,20 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.Header__logo{
+    color: #fff;
+    font-weight: 700;
+    font-size: 3em;
+    letter-spacing: 10px;
+}
+
+.Header svg{
+    fill: #fff;
+}
+.Header svg:hover{
+    cursor: pointer;
+}

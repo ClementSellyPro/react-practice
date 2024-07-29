@@ -1,0 +1,17 @@
+:root{
+    --background-image: url('/src/images/bg-desktop-light.jpg');
+    --background-color: hsl(236, 33%, 92%);
+    --background-color-item: hsl(0, 0%, 98%);
+    --color-text: hsl(235, 19%, 35%);
+    --color-text-light: hsl(236, 9%, 61%);
+    --primary: hsl(220, 98%, 61%);
+}
+
+.dark{
+    --background-image: url('/src/images/bg-desktop-dark.jpg');
+    --background-color: hsl(235, 21%, 11%);
+    --background-color-item: hsl(235, 24%, 19%);
+    --color-text: hsl(234, 39%, 85%);
+    --color-text-light: hsl(234, 11%, 52%);
+    --primary: hsl(220, 98%, 61%);
+}

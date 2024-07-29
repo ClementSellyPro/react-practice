@@ -1,0 +1,24 @@
+.TodoSectionFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color:  var(--color-text-light);
+}
+
+.footer_items-left{
+    font-size: 0.8em;
+}
+
+.footer_filter{
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+}
+.footer_filter-item:hover, .footer_clear:hover{
+    cursor: pointer;
+    color: var(--color-text);
+}
+.filter-selected{
+    color: var(--primary);
+}
