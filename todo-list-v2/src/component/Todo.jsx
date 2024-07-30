@@ -10,22 +10,43 @@ function Todo({id, task, completed}){
 
     // marked a task as completed or not 
     function handleCompletedTask(e){
-        let targetTask = e.target.parentElement.dataset.id;
+        let target = e.target;
+        let targetTask;
         let updatedList = [...todoList];
-        console.log(updatedList[targetTask].completed);
+        
+        if(target.classList.contains('todo-checkbox')){
+            targetTask = e.target.parentElement.dataset.id;
+        }else if(target.tagName === 'svg'){
+            targetTask = e.target.parentElement.parentElement.dataset.id;
+        }else if(target.tagName === 'path'){
+            targetTask = e.target.parentElement.parentElement.parentElement.dataset.id;
+        }
+
         if(updatedList[targetTask].completed === true){
             updatedList[targetTask].completed = false;
         }else{
             updatedList[targetTask].completed = true;
         }
+
         setTodoList(updatedList)
     }
 
     // delete a task
     function handleDeleteTask(e){
-        let targetTask = e.target.parentElement.parentElement.dataset.id;
-        let updatedList = [...todoList];
-        updatedList.splice(targetTask, 1);
+        let target = e.target;
+        let targetTask;
+        if(target.classList.contains('todo-delete-icon')){
+            targetTask = e.target.parentElement.dataset.id;
+        }else if(target.tagName === 'svg'){
+            targetTask = e.target.parentElement.parentElement.dataset.id;
+        }else if(target.tagName === 'path'){
+            targetTask = e.target.parentElement.parentElement.parentElement.dataset.id;
+        }
+
+        let updatedList = [...todoList].filter(todo => {
+            return todo.id !== Number(targetTask);
+        });
+
         setTodoList(updatedList);
     }
 
