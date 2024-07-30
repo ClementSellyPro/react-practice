@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import '../style/TodoSectionFooter.css';
+import TodoContext from '../context/Todo.context';
 
 function TodoSectionFooter(){
 
-    const [selectedFilter, setSelectedFilter] = useState('All');
+    const {todoList, setTodoList, selectedFilter, setSelectedFilter} = useContext(TodoContext);
 
     function handleChangeFilter(e){
         let filterList = e.target.parentElement.childNodes;
@@ -17,6 +18,7 @@ function TodoSectionFooter(){
         // set new filter state
         let newSelectedFilter = e.target.innerText;
         setSelectedFilter(newSelectedFilter);
+        console.log(selectedFilter);
 
         // set 'filter-selected' class for the new selected filter
         filterList.forEach(filter => {
@@ -26,10 +28,19 @@ function TodoSectionFooter(){
         });
     }
 
+    // clear all completed tasks
+    function handleClearCompletedTask(){
+        let copyList = [...todoList];
+        let updatedList = copyList.filter(task => {
+            return !task.completed
+        });
+        setTodoList(updatedList);
+    }
+
     return (
         <div className='TodoSectionFooter'>
             <div className='footer_items-left'>
-                5 items left
+                {todoList.length} items left
             </div>
 
             <div className='footer_filter'>
@@ -38,7 +49,7 @@ function TodoSectionFooter(){
                 <p onClick={handleChangeFilter} className='footer_filter-item'>Completed</p>
             </div>
 
-            <div className='footer_clear'>
+            <div onClick={handleClearCompletedTask} className='footer_clear'>
                 Clear Completed
             </div>
         </div>

@@ -14,8 +14,8 @@ function TodoSection(){
                 todoList.length === 0 ? 
                     <div className='todo-empty'> Add new Todos to display them here </div> 
                     : 
-                    todoList.map(todo =>{
-                        return <Todo task={todo.task} completed={todo.completed} />
+                    todoList.map((todo, index) =>{
+                        return <Todo key={index} id={todo.id} task={todo.task} completed={todo.completed} />
                     })
             }
 

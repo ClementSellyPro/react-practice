@@ -4,7 +4,7 @@
     align-items: center;
     padding: 20px;
     color: var(--color-text);
-    border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+    border-bottom: 1px solid rgba(150, 150, 150, 0.3);
 }
 
 .todo-checkbox{
@@ -13,10 +13,14 @@
     align-items: center;
     width: 30px;
     height: 30px;
-    border: 1px solid rgba(200, 200, 200, 0.5);
+    border: 1px solid rgba(150, 150, 150, 0.3);
     border-radius: 50%;
 }
-.completed-task{
+.todo-checkbox:hover{
+    cursor: pointer;
+    border: 1px solid rgba(150, 150, 150, 0.6);
+}
+.completed-task, .completed-task:hover{
     border: none;
     background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
     color: white;
