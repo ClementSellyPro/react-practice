@@ -12,13 +12,13 @@ function App() {
   return (
     <TodoContextProvider>
       <div className="App" ref={appRef}>
-        <div className='background-image'> {/* image generate with the css */}</div>
         <div className='App__container'>
           <Header appRef={appRef} />
           <UserInput />
           <TodoSection />
         </div>
       </div>
+      <div className='background-image'> {/* image generate with the css */}</div>
     </TodoContextProvider>
   );
 }

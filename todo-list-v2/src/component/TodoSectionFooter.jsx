@@ -1,10 +1,12 @@
 import { useContext } from 'react';
 import '../style/TodoSectionFooter.css';
 import TodoContext from '../context/Todo.context';
+import useLocalStorage from '../hook/useLocalStorage';
 
 function TodoSectionFooter(){
 
     const {todoList, setTodoList, selectedFilter, setSelectedFilter} = useContext(TodoContext);
+    const {setItem} = useLocalStorage('todoListStored');
 
     function handleChangeFilter(e){
         let filterList = e.target.parentElement.childNodes;
@@ -35,6 +37,7 @@ function TodoSectionFooter(){
             return !task.completed
         });
         setTodoList(updatedList);
+        setItem(updatedList);
     }
 
     return (

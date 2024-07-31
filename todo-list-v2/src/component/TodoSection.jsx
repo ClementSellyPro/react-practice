@@ -1,12 +1,22 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import '../style/TodoSection.css';
 import TodoContext from '../context/Todo.context';
 import Todo from './Todo';
 import TodoSectionFooter from './TodoSectionFooter';
+import useLocalStorage from '../hook/useLocalStorage';
 
 function TodoSection(){
 
-    const {todoList, selectedFilter} = useContext(TodoContext);
+    const {todoList, setTodoList, selectedFilter} = useContext(TodoContext);
+    const {getItem} = useLocalStorage('todoListStored');
+
+    useEffect(() => {
+        let getTodoList = getItem();
+        
+        if(getTodoList !== undefined){
+            setTodoList(getItem());
+        }
+    },[]);
 
     return (
         <div className='TodoSection'>
