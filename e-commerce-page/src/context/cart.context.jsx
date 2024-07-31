@@ -6,14 +6,12 @@ let CartContext = createContext({
     amountCurrentItem: 0,
     setAmountCurrentItem: () => {},
 });
-
 export default CartContext;
+
 
 const CartContextProvider = ({children}) => {
     const [listItem, setListItem] = useState([]);
     const [amountCurrentItem, setAmountCurrentItem] = useState(0);
-
-    
 
     return (
         <CartContext.Provider value={{
@@ -26,7 +24,6 @@ const CartContextProvider = ({children}) => {
         </CartContext.Provider>
     )
 }
-
 export {CartContextProvider};
 
 

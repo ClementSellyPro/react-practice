@@ -24,3 +24,10 @@
 .ButtonPrimary:active{
     background-color: var(--orange);
 }
+
+.ButtonPrimary:disabled,
+.ButtonPrimary[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}

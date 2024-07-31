@@ -2,8 +2,12 @@ import '../style/ProductDetail.css';
 import ButtonIncrement from './UI/ButtonIncrement';
 import ButtonPrimary from './UI/ButtonPrimary';
 import cartIcon from '../images/icon-cart.svg';
+import { useCartContext } from '../context/cart.context';
 
 function ProductDetail({currentProduct}){
+
+    const {amountCurrentItem} = useCartContext();
+
     return (
         <div className='ProductDetail'>
             <h2 className='product-brand'>{currentProduct.brand}</h2>
@@ -19,7 +23,7 @@ function ProductDetail({currentProduct}){
 
             <div className='btn-section'>
                 <ButtonIncrement />
-                <ButtonPrimary currentProduct={currentProduct}>
+                <ButtonPrimary disabled={amountCurrentItem > 0 ? false : true} currentProduct={currentProduct}>
                     <img className='cart-icon-btn' src={cartIcon} alt='Cart Icon' />
                     Add to cart
                 </ButtonPrimary>

@@ -1,7 +1,7 @@
 import { useCartContext } from '../../context/cart.context';
 import './ButtonPrimary.css';
 
-function ButtonPrimary({children, currentProduct}){
+function ButtonPrimary({children, currentProduct, disabled}){
 
     const {amountCurrentItem, setAmountCurrentItem, listItem ,setListItem} = useCartContext()
 
@@ -17,7 +17,7 @@ function ButtonPrimary({children, currentProduct}){
     }
 
     return (
-        <button onClick={handleAddItem} className='ButtonPrimary'>
+        <button disabled={disabled} onClick={handleAddItem} className='ButtonPrimary'>
             {children}
         </button>
     )
