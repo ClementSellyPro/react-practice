@@ -20,7 +20,6 @@ function TodoSectionFooter(){
         // set new filter state
         let newSelectedFilter = e.target.innerText;
         setSelectedFilter(newSelectedFilter);
-        console.log(selectedFilter);
 
         // set 'filter-selected' class for the new selected filter
         filterList.forEach(filter => {

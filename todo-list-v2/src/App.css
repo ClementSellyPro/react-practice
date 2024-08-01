@@ -4,6 +4,7 @@
     height: 100vh;
     width: 100%;
     background-color: var(--background-color);
+    z-index: -2;
 }
 
 .background-image{
@@ -12,6 +13,7 @@
     background: var(--background-image);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: top;
 }
 
 .App__container{
@@ -21,4 +23,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+    .App__container{
+        width: 90%;
+    }
 }

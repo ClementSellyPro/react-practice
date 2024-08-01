@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import '../style/UserInput.css';
 import TodoContext from '../context/Todo.context';
 import useLocalStorage from '../hook/useLocalStorage';

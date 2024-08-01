@@ -22,3 +22,28 @@
 .filter-selected{
     color: var(--primary);
 }
+
+@media screen and (max-width: 600px) {
+    .TodoSectionFooter{
+        position: relative;
+        width: 90%;
+    }
+
+    .footer_clear{
+        font-size: 0.9em;
+    }
+
+    .footer_filter{
+        position: absolute;
+        top: 60px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 111%;
+        height: 50px;
+        padding: 5px 20px;
+        border-radius: 5px;
+        background-color: var(--background-color-item);
+    }
+}

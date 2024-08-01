@@ -18,3 +18,16 @@
 .Header svg:hover{
     cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+    .Header{
+        margin-top: 40px;
+    }
+
+    .Header__logo{
+        font-size: 2em;
+    }
+    .Header svg{
+        width: 80%;
+    }
+}
