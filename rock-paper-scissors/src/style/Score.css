@@ -1,0 +1,23 @@
+.Score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 120px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.Score__title{
+    font-size: 0.8em;
+    font-weight: 600;
+    color: hsl(229, 64%, 46%);
+    letter-spacing: 2px;
+}
+
+.Score__number{
+    font-size: 4em;
+    font-weight: 700;
+    color: hsl(229, 25%, 31%);
+}
