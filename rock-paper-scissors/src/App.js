@@ -1,27 +1,37 @@
 import './App.css';
 import Header from './component/Header';
-import Circle from './component/Circle';
+import PageSelection from './stepPage/PageSelection';
 import RulesButton from './component/RulesButton';
 import Rules from './component/Rules';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 function App() {
 
   const [isRulesActive, setIsRulesActive] = useState(false);
+  const rulesRef = useRef();
+
+  
 
   return (
+    <>
     <div className="App">
       <Header />
-      <Circle />
+      <div className='App__content'>
 
-      <RulesButton isRulesActive={isRulesActive} setIsRulesActive={setIsRulesActive} />
-      { 
+        <PageSelection />
+
+      </div>
+    </div>
+
+    {/* Button to display the rules */}
+    <RulesButton setIsRulesActive={setIsRulesActive} />
+    { 
         isRulesActive ? 
-        <Rules isRulesActive={isRulesActive} setIsRulesActive={setIsRulesActive} /> 
+        <Rules rulesRef={rulesRef} setIsRulesActive={setIsRulesActive} /> 
         : 
         null
-      }
-    </div>
+    }
+    </>
   );
 }
 

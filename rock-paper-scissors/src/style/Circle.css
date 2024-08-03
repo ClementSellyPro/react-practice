@@ -6,14 +6,65 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: rgb(237, 237, 237);
+    z-index: 4;
 }
 .Circle::after{
     position: absolute;
-    top: 30px;
+    top: 0px;
     content: '';
-    width: 170px;
-    height: 170px;
+    width: 195px;
+    height: 195px;
     border-radius: 50%;
-    background-color: white;
+}
+.Circle:hover{
+    cursor: pointer;
+    filter: brightness(0.8);
+}
+.Circle:active{
+    opacity: 1;
+    filter: brightness(1);
+}
+.paper{
+    background-color: hsl(230, 52%, 48%);
+}
+.paper::after{
+    background-color: hsl(230, 89%, 62%);
+}
+.scissors{
+    background-color: hsl(39, 100%, 38%);
+}
+.scissors::after{
+    background-color: hsl(39, 89%, 49%);
+}
+.rock{
+    background-color: hsl(349, 75%, 38%);
+}
+.rock::after{
+    background-color: hsl(349, 71%, 52%);
+}
+
+.Circle__background{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(226, 226, 226);
+    z-index: 5;
+}
+.Circle__background::after{
+    position: absolute;
+    bottom: 0px;
+    content: '';
+    width: 145px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: rgb(241, 241, 241);
+}
+
+.Circle__img{
+    width: 50%;
+    z-index: 6;
 }
