@@ -2,6 +2,7 @@ import Circle from '../component/Circle';
 import backgroundSelection from '../images/bg-triangle.svg';
 
 function PageSelection(){
+
     return (
         <>
             <div className='selection-section '>

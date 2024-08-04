@@ -3,35 +3,35 @@ import Header from './component/Header';
 import PageSelection from './stepPage/PageSelection';
 import RulesButton from './component/RulesButton';
 import Rules from './component/Rules';
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
+import SelectionContext, { SelectionContextProvider } from './context/Selection.context';
 
 function App() {
 
+  const { SetSelectedWeapon } = useContext(SelectionContext);
   const [isRulesActive, setIsRulesActive] = useState(false);
-  const rulesRef = useRef();
-
-  
+  const rulesRef = useRef();  // ref to click outside the rules box
 
   return (
-    <>
-    <div className="App">
-      <Header />
-      <div className='App__content'>
+    <SelectionContextProvider>
+      <div className="App">
+        <Header />
+        <div className='App__content'>
 
-        <PageSelection />
+          <PageSelection SetSelectedWeapon={SetSelectedWeapon} />
 
+        </div>
       </div>
-    </div>
 
-    {/* Button to display the rules */}
-    <RulesButton setIsRulesActive={setIsRulesActive} />
-    { 
-        isRulesActive ? 
-        <Rules rulesRef={rulesRef} setIsRulesActive={setIsRulesActive} /> 
-        : 
-        null
-    }
-    </>
+      {/* Button to display the rules */}
+      <RulesButton setIsRulesActive={setIsRulesActive} />
+      { 
+          isRulesActive ? 
+          <Rules rulesRef={rulesRef} setIsRulesActive={setIsRulesActive} /> 
+          : 
+          null
+      }
+    </SelectionContextProvider>
   );
 }
 
