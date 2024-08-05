@@ -7,6 +7,7 @@ const SelectionContext = createContext({
 
 export default SelectionContext;
 
+
 export function SelectionContextProvider({children}){
     
     const [selectedWeapon, setSelectedWeapon] = useState('');
