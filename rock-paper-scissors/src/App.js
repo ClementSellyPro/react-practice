@@ -8,6 +8,8 @@ import { useContext, useRef, useState } from 'react';
 import SelectionContext, { SelectionContextProvider } from './context/Selection.context';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import Result from './component/Result';
+
 function App() {
 
   const { SetSelectedWeapon } = useContext(SelectionContext);
@@ -22,6 +24,10 @@ function App() {
     {
       path: '/versus',
       element: <PageVersus />
+    },
+    {
+      path: '/result',
+      element: <Result />
     }
   ]);
 
@@ -32,7 +38,6 @@ function App() {
         <div className='App__content'>
 
           <RouterProvider router={router} />
-
         </div>
       </div>
 

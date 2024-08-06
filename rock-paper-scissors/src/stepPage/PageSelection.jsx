@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Circle from '../component/Circle';
 import backgroundSelection from '../images/bg-triangle.svg';
-// style regroup in app.css
+// pages style regroup in app.css
 
 function PageSelection(){
 

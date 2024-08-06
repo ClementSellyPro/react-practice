@@ -7,11 +7,10 @@ import SelectionContext from '../context/Selection.context';
 
 function Circle({weapon}){
 
-    const { selectedWeapon, setSelectedWeapon } = useContext(SelectionContext);
+    const { setSelectedWeapon } = useContext(SelectionContext);
 
     function handleSelectionWeapon(){
         setSelectedWeapon(weapon);
-        console.log(selectedWeapon);
     }
 
     return (

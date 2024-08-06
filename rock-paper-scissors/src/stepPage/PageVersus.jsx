@@ -1,11 +1,41 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import SelectionContext from "../context/Selection.context";
 import Circle from "../component/Circle";
-// style regroup in app.css
+// pages style regroup in app.css
 
 function PageVersus(){
 
-    const {selectedWeapon} = useContext(SelectionContext);
+    const {selectedWeapon, opponentSelection} = useContext(SelectionContext);
+    const [result, setResult] = useState('');
+
+    function comparison(){
+        if(selectedWeapon === 'paper' && opponentSelection === 'scissors'){
+            setResult('YOU LOSE');
+        }else if(selectedWeapon === 'scissors' && opponentSelection === 'paper'){
+            setResult('YOU WIN');
+        }
+
+        if(selectedWeapon === 'scissors' && opponentSelection === 'rock'){
+            setResult('YOU LOSE');
+        }else if(selectedWeapon === 'rock' && opponentSelection === 'scissors'){
+            setResult('YOU WIN');
+        }
+
+        if(selectedWeapon === 'rock' && opponentSelection === 'paper'){
+            setResult('YOU LOSE');
+        }else if(selectedWeapon === 'paper' && opponentSelection === 'rock'){
+            setResult('YOU WIN');
+        }
+
+        if(selectedWeapon === opponentSelection){
+            setResult('DRAW');
+        }
+        console.log('selectedWeapon ::: ', selectedWeapon, ', opponentSelection ::: ', opponentSelection, ', result ::: ', result);
+    } 
+
+    useEffect(() => {
+        comparison();
+    },[selectedWeapon]);
 
     return (
         <div className="versus-section">
@@ -17,7 +47,7 @@ function PageVersus(){
             
             <div className="versus-section__picked">
                 <h1 className="picked-title">THE HOUSE PICKED</h1>
-                <Circle />
+                <Circle weapon={opponentSelection} />
                 <div className="versus-background"></div>
             </div>
         </div>
