@@ -8,6 +8,6 @@ function Result(){
             <Link><button className="Result__btn">PLAY AGAIN</button></Link>
         </div>
     )
-}
+} 
 
 export default Result;

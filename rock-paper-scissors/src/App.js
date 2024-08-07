@@ -7,6 +7,7 @@ import Rules from './component/Rules';
 import { useContext, useRef, useState } from 'react';
 import SelectionContext, { SelectionContextProvider } from './context/Selection.context';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import Result from './component/Result';
 
@@ -19,7 +20,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <PageSelection SetSelectedWeapon={SetSelectedWeapon} />,
+      element: <motion.div initial={{opacity: 0}} animate={{opacity: 1}}><PageSelection SetSelectedWeapon={SetSelectedWeapon} /></motion.div>,
     },
     {
       path: '/versus',

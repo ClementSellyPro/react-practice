@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import SelectionContext from "../context/Selection.context";
 import Circle from "../component/Circle";
+import { motion } from "framer-motion";
 // pages style regroup in app.css
 
 function PageVersus(){
@@ -41,13 +42,17 @@ function PageVersus(){
         <div className="versus-section">
             <div className="versus-section__picked">
                 <h1 className="picked-title">YOU PICKED</h1>
-                <Circle weapon={selectedWeapon} />
+                <motion.div initial={{x: -100, opacity: 0}} animate={{x: 0, opacity: 1}}>
+                    <Circle weapon={selectedWeapon} />
                 <div className="versus-background"></div>
+                </motion.div>
             </div>
             
             <div className="versus-section__picked">
                 <h1 className="picked-title">THE HOUSE PICKED</h1>
-                <Circle weapon={opponentSelection} />
+                <motion.div initial={{x: 100, opacity: 0}} animate={{x: 0, opacity: 1}} transition={{delay: 1}}>
+                    <Circle weapon={opponentSelection} />
+                </motion.div>
                 <div className="versus-background"></div>
             </div>
         </div>
