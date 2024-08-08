@@ -1,37 +1,49 @@
 import { useContext, useEffect, useState } from "react";
 import SelectionContext from "../context/Selection.context";
 import Circle from "../component/Circle";
+import Result from "../component/Result";
 import { motion } from "framer-motion";
 // pages style regroup in app.css
 
 function PageVersus(){
 
-    const {selectedWeapon, opponentSelection} = useContext(SelectionContext);
+    const {selectedWeapon, opponentSelection, score, setScore, winner, setWinner} = useContext(SelectionContext);
     const [result, setResult] = useState('');
+
+    function winSetter(){
+        setResult('YOU WIN');
+        setScore(score + 1);
+    }
+
+    function loseSetter(){
+        setResult('YOU LOSE');
+        if(score > 0){
+            setScore(score - 1);
+        }
+    }
 
     function comparison(){
         if(selectedWeapon === 'paper' && opponentSelection === 'scissors'){
-            setResult('YOU LOSE');
+            loseSetter();
         }else if(selectedWeapon === 'scissors' && opponentSelection === 'paper'){
-            setResult('YOU WIN');
+            winSetter();
         }
 
         if(selectedWeapon === 'scissors' && opponentSelection === 'rock'){
-            setResult('YOU LOSE');
+            loseSetter();
         }else if(selectedWeapon === 'rock' && opponentSelection === 'scissors'){
-            setResult('YOU WIN');
+            winSetter();
         }
 
         if(selectedWeapon === 'rock' && opponentSelection === 'paper'){
-            setResult('YOU LOSE');
+            loseSetter();
         }else if(selectedWeapon === 'paper' && opponentSelection === 'rock'){
-            setResult('YOU WIN');
+            winSetter();
         }
 
         if(selectedWeapon === opponentSelection){
             setResult('DRAW');
         }
-        console.log('selectedWeapon ::: ', selectedWeapon, ', opponentSelection ::: ', opponentSelection, ', result ::: ', result);
     } 
 
     useEffect(() => {
@@ -44,9 +56,13 @@ function PageVersus(){
                 <h1 className="picked-title">YOU PICKED</h1>
                 <motion.div initial={{x: -100, opacity: 0}} animate={{x: 0, opacity: 1}}>
                     <Circle weapon={selectedWeapon} />
-                <div className="versus-background"></div>
                 </motion.div>
+                <div className="winner-box"></div>
             </div>
+
+            <motion.div initial={{opacity: 0, y: -100}} animate={{opacity: 1, y: 0}} transition={{delay: 2}}>
+                <Result />
+            </motion.div>
             
             <div className="versus-section__picked">
                 <h1 className="picked-title">THE HOUSE PICKED</h1>
@@ -54,6 +70,7 @@ function PageVersus(){
                     <Circle weapon={opponentSelection} />
                 </motion.div>
                 <div className="versus-background"></div>
+                <div className="winner-box"></div>
             </div>
         </div>
     )

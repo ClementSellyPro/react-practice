@@ -67,6 +67,7 @@
     align-items: center;
     justify-content: space-between;
     height: 300px;
+    width: 350px;
 }
 
 .versus-background{
@@ -76,4 +77,34 @@
     height: 150px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 50%;
+}
+
+.winner-box{
+    position: absolute;
+    bottom: -13%;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+}
+.winner-box::after{
+    position: absolute;
+    top: -18%;
+    left: -18%;
+    content: '';
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.winner-box::before{
+    position: absolute;
+    top: -35%;
+    left: -35%;
+    content: '';
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
 }
