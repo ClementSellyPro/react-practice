@@ -13,6 +13,7 @@ function PageVersus(){
     function winSetter(){
         setResult('YOU WIN');
         setScore(score + 1);
+        setWinner('you');
     }
 
     function loseSetter(){
@@ -20,6 +21,7 @@ function PageVersus(){
         if(score > 0){
             setScore(score - 1);
         }
+        setWinner('opponent');
     }
 
     function comparison(){
@@ -43,6 +45,7 @@ function PageVersus(){
 
         if(selectedWeapon === opponentSelection){
             setResult('DRAW');
+            setWinner('draw');
         }
     } 
 
@@ -57,11 +60,13 @@ function PageVersus(){
                 <motion.div initial={{x: -100, opacity: 0}} animate={{x: 0, opacity: 1}}>
                     <Circle weapon={selectedWeapon} />
                 </motion.div>
-                <div className="winner-box"></div>
+                <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 2}}>
+                    {winner === 'you' ? <div className="winner-box"></div> : null}
+                </motion.div>
             </div>
 
             <motion.div initial={{opacity: 0, y: -100}} animate={{opacity: 1, y: 0}} transition={{delay: 2}}>
-                <Result />
+                <Result result={result}/>
             </motion.div>
             
             <div className="versus-section__picked">
@@ -70,7 +75,9 @@ function PageVersus(){
                     <Circle weapon={opponentSelection} />
                 </motion.div>
                 <div className="versus-background"></div>
-                <div className="winner-box"></div>
+                <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 2}}>
+                    {winner === 'opponent' ? <div className="winner-box"></div> : null}
+                </motion.div>
             </div>
         </div>
     )

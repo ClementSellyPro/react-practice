@@ -81,7 +81,8 @@
 
 .winner-box{
     position: absolute;
-    bottom: -13%;
+    bottom: -10px;
+    right: -21%;
     width: 280px;
     height: 280px;
     border-radius: 50%;
