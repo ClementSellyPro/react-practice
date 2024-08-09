@@ -21,7 +21,8 @@ export function SelectionContextProvider({children}){
     const [winner, setWinner] = useState('');
 
     const opponentSelection = useMemo(() => {
-        const random = Math.floor(Math.random() * 3);
+        let random = Math.floor(Math.random() * 3);
+        random = Math.floor(Math.random() * 3);
         return weapons[random];
     }, [selectedWeapon]);
 

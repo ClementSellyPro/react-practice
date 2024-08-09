@@ -60,12 +60,12 @@ function PageVersus(){
                 <motion.div initial={{x: -100, opacity: 0}} animate={{x: 0, opacity: 1}}>
                     <Circle weapon={selectedWeapon} />
                 </motion.div>
-                <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 2}}>
+                <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 2, duration: 2, type: 'tween'}}>
                     {winner === 'you' ? <div className="winner-box"></div> : null}
                 </motion.div>
             </div>
 
-            <motion.div initial={{opacity: 0, y: -100}} animate={{opacity: 1, y: 0}} transition={{delay: 2}}>
+            <motion.div initial={{opacity: 0, y: -100}} animate={{opacity: 1, y: 0}} transition={{delay: 2, duration: 1}}>
                 <Result result={result}/>
             </motion.div>
             
@@ -75,7 +75,7 @@ function PageVersus(){
                     <Circle weapon={opponentSelection} />
                 </motion.div>
                 <div className="versus-background"></div>
-                <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 2}}>
+                <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 2, duration: 2, type: 'tween'}}>
                     {winner === 'opponent' ? <div className="winner-box"></div> : null}
                 </motion.div>
             </div>
