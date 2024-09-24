@@ -1,0 +1,11 @@
+.Container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a1163;
+    width: 80%;
+    height: 65%;
+    border-radius: 10px;
+    max-width: 900px;
+    overflow: hidden;
+}

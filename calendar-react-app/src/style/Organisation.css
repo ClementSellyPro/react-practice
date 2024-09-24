@@ -1,0 +1,34 @@
+.Organisation{
+    width: 35%;
+    height: 100%;
+    background-color: #250c5e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.OrganisationDate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.OrganisationDate_title{
+    font-weight: bold;
+}
+
+.Organisation button{
+    width: 180px;
+    padding: 10px;
+    font-weight: bold;
+    color: #212121;
+    background-color: #ebe00e;
+    border: none;
+    border-radius: 50px;
+}
+.Organisation button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
